@@ -1,5 +1,3 @@
-//Собираем все файлы и подключаем их друг к другу
-
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -9,11 +7,10 @@ const logger = require("morgan");
 const flash = require("connect-flash");
 
 const indexRouter = require("./routes/index");
-const horsesRouter = require("./routes/horse");
 
 const app = express();
 
-const connection = require("./models/index");
+const connection = require("./models/courses");
 
 // view engine setup
 app.set("views", path.join(__dirname, "public/views"));
@@ -39,7 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(flash());
 app.use("/", indexRouter);
-app.use("/horses", horsesRouter);
+// app.use("/horses", horsesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
