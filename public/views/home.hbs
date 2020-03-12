@@ -3,17 +3,26 @@
 <form action="/addCourse" method="GET">
   <input type="submit" value="Create New Course">
 </form>
-{{/if}}
+
 
 {{#each courses}}
 <a href="/{{this.title}}/course">{{this.title}}</a>
-{{#if isLoggedin}}
+
 <form action="/delete/{{this.title}}" method="GET">
   <input type="submit" value="Delete">
 </form>
+
 <form action="/{{this.title}}" method="GET">
   <input type="submit" value="Edit">
 </form>
-{{/if}}
+
 <br>
 {{/each}}
+
+{{else}}
+
+{{#each courses}}
+<a href="/{{this.title}}/course">{{this.title}}</a>
+<br>
+{{/each}}
+{{/if}}

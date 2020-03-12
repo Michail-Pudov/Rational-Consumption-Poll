@@ -83,12 +83,11 @@ router.post("/new/:id", async function(req, res, next) {
 });
 
 router.get("/delete/:id", async function(req, res, next) {
-  res.render("admin/deleteCourse");
+  res.render("admin/deleteCourse", { title: req.params.id });
 });
 router.post("/delete/:id", async function(req, res, next) {
   let title = req.params.id;
   let deleteTitle = await Course.findOneAndDelete({ title: title });
-  await Course.save();
   res.redirect("/");
 });
 
