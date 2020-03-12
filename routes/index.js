@@ -33,7 +33,7 @@ router.get("/:id/course", async function(req, res) {
 });
 
 router.get("/login", async function(req, res) {
-  res.render("admin/login");
+  res.render("admin/logIn");
 });
 
 router.post("/ok", async function(req, res) {
