@@ -11,7 +11,7 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
-const connection = require("./models/courses");
+// const connection = require("./models/courses");
 
 // view engine setup
 app.set("views", path.join(__dirname, "public/views"));
@@ -34,6 +34,11 @@ app.use(
     }
   })
 );
+
+app.use(function(req, res, next) {
+  app.locals.user = req.session.user;
+  next();
+});
 
 app.use(express.static(path.join(__dirname, "public")));
 
