@@ -7,18 +7,10 @@ const Admin = require("../models/admin");
 
 router.get("/", async function(req, res) {
   let courses = await Course.find();
-
-  // let acc = 0;
-  // let totalreviews = course.reviews.length;
-  // let total = course.reviews.map(val => (val += acc));
-  // let averagescore = total / totalreviews;
-
   if (req.session.user) {
     res.render("home", {
       courses: courses,
       isLoggedin: true
-      // averageScore: averagescore,
-      // totalReviews: totalreviews
     });
   } else {
     res.render("home", { courses });
@@ -126,6 +118,12 @@ router.post("/save/:id", async function(req, res) {
   }
   await document.save();
   res.redirect(`/${req.params.id}/course`);
+});
+
+router.get("/exit", async function(req, res) {
+  req.session.destroy();
+  res.clearCookie("user_sid");
+  res.redirect("/");
 });
 
 module.exports = router;
