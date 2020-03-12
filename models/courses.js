@@ -11,6 +11,8 @@ db.concat("error", console.error.bind(console, "Error with MongoDB: "));
 
 const courseSchema = new mongoose.Schema({
   title: String,
-  lessons: Array
+  lessons: Array,
+  reviews: Array,
+  totalReviews: Number
 });
 module.exports = mongoose.model("Course", courseSchema);

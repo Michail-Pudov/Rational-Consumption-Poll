@@ -8,8 +8,18 @@ const Admin = require("../models/admin");
 router.get("/", async function(req, res) {
   let courses = await Course.find();
 
+  // let acc = 0;
+  // let totalreviews = course.reviews.length;
+  // let total = course.reviews.map(val => (val += acc));
+  // let averagescore = total / totalreviews;
+
   if (req.session.user) {
-    res.render("home", { courses: courses, isLoggedin: true });
+    res.render("home", {
+      courses: courses,
+      isLoggedin: true
+      // averageScore: averagescore,
+      // totalReviews: totalreviews
+    });
   } else {
     res.render("home", { courses });
   }
@@ -44,6 +54,16 @@ router.post("/ok", async function(req, res) {
   } else {
     res.redirect("/");
   }
+});
+
+router.post("/review/:id", async function(req, res) {
+  let title = await Course.findOne({ title: req.params.id });
+  let score = req.body.range;
+  title.reviews.push(score);
+  let all = title.reviews.reduce((acc, elem) => +elem + acc, 0);
+  title.totalReviews = Math.floor(all / title.reviews.length);
+  await title.save();
+  res.json({ operations: true });
 });
 
 router.use(function(req, res, next) {
