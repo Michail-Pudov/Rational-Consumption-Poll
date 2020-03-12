@@ -11,7 +11,6 @@ db.concat("error", console.error.bind(console, "Error with MongoDB: "));
 
 const courseSchema = new mongoose.Schema({
   title: String,
-  lessons: [{ lessonNum: Number, youtubeURL: String, formURL: String }]
+  lessons: Array
 });
-// courseSchema.statics.newSchema();
 module.exports = mongoose.model("Course", courseSchema);

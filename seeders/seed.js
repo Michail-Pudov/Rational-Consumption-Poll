@@ -11,7 +11,7 @@ async function createDatabase() {
   const db = mongoose.connections;
   db.concat("error", console.error.bind(console, "Error with MongoDB: "));
 
-  let course1 = await Course.create({
+  await Course.create({
     title: "Understanding clothes",
     lessons: [
       {
@@ -42,7 +42,7 @@ async function createDatabase() {
     ]
   });
 
-  // await mongoose.disconnect();
+  await mongoose.disconnect();
 }
 
 createDatabase();
