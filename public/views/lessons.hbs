@@ -22,7 +22,8 @@
   <br />
   <br />
   {{/each}}
-  <input type="submit" value="Save Changes">
+  <input type="submit" value="Save Changes" class="btn  btn-block btn-outline-success"> 
+   
 
 </form>
 
@@ -49,7 +50,7 @@
   <form action="/review/{{title}}" method="POST">
     <p>Вам понравился курс?</p>
     <input type="range" min="1" max="100" value="50" ,class="slider" name="range">
-    <input type="submit" value="Оставить отзыв">
+    <input type="submit" value="Оставить отзыв" class="btn  btn-block btn-outline-success">
   </form>
 </div>
 
@@ -63,7 +64,7 @@
 
 {{#if isLoggedin}}
 <br />
-<form action="/new/{{title}}" method="GET">
-  <input type="submit" value="Create New Entry">
+<form action="/new/{{title}}" method="GET" >
+  <input type="submit" value="Create New Entry" class="btn  btn-block btn-outline-success">
 </form>
 {{/if}}
