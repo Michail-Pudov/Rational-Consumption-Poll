@@ -91,4 +91,21 @@ router.post("/delete/:id", async function(req, res, next) {
   res.redirect("/");
 });
 
+router.post("/save/:id", async function(req, res) {
+  let document = await Course.findOne({ title: req.params.id });
+  let allYoutubeURL = req.body.youtubeURL;
+  let allformURL = req.body.formURL;
+
+  document.lessons = [];
+
+  for (let i = 0; i < allYoutubeURL.length; i++) {
+    document.lessons.push({
+      youtubeURL: allYoutubeURL[i],
+      formURL: allformURL[i]
+    });
+  }
+  await document.save();
+  res.redirect(`/${req.params.id}/course`);
+});
+
 module.exports = router;

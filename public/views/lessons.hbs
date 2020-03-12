@@ -3,25 +3,28 @@
 
 
 {{#if isLoggedin}}
-{{#each course}}
-{{#if this.youtubeURL}}
-<div class="youtube">
-  <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
-</div>
-{{/if}}
-<br />
-<input type="text" value="{{this.youtubeURL}}" placeholder="youtubeURL">
-{{#if this.formURL}}
-<div class="googleDoc">
-  <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
-</div>
-{{/if}}
-<br />
-<input type="text" value="{{this.formURL}}" placeholder="formURL">
-<br />
-<br />
-{{/each}}
+<form action="/save/{{title}}" method="POST">
+  {{#each course}}
+  {{#if this.youtubeURL}}
+  <div class="youtube">
+    <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
+  </div>
+  {{/if}}
+  <br />
+  <input type="text" value="{{this.youtubeURL}}" placeholder="youtubeURL" name="youtubeURL">
+  {{#if this.formURL}}
+  <div class="googleDoc">
+    <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
+  </div>
+  {{/if}}
+  <br />
+  <input type="text" value="{{this.formURL}}" placeholder="formURL" name="formURL">
+  <br />
+  <br />
+  {{/each}}
+  <input type="submit" value="Save Changes">
 
+</form>
 
 {{else}}
 
@@ -43,17 +46,11 @@
 
 
 {{#if isLoggedin}}
-<form action="/save" method="GET">
+{{!-- <form action="/save/{{title}}" method="POST">
   <input type="submit" value="Save Changes">
-</form>
+</form> --}}
 <br />
 <form action="/new/{{title}}" method="GET">
   <input type="submit" value="Create New Entry">
 </form>
 {{/if}}
-
-{{!-- <div class="home">
-  <form class="" method="GET" action="/" id="home">
-    <input type="submit" value="Back to Courses">
-  </form>
-</div> --}}
