@@ -1,0 +1,19 @@
+<h1 class="course-heading">Our courses</h1>
+{{#if isLoggedin}}
+<form action="/addCourse" method="GET">
+  <input type="submit" value="Create New Course">
+</form>
+{{/if}}
+
+{{#each courses}}
+<a href="/{{this.title}}">{{this.title}}</a>
+{{#if isLoggedin}}
+<form action="/delete/{{this.title}}" method="GET">
+  <input type="submit" value="Delete">
+</form>
+<form action="/{{this.title}}" method="GET">
+  <input type="submit" value="Edit">
+</form>
+{{/if}}
+<br>
+{{/each}}
