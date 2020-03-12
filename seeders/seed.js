@@ -1,4 +1,6 @@
+///////Первоначальное наполнение базы данных
 const mongoose = require("mongoose");
+
 const Course = require("../models/courses");
 
 async function createDatabase() {
@@ -11,7 +13,7 @@ async function createDatabase() {
   const db = mongoose.connections;
   db.concat("error", console.error.bind(console, "Error with MongoDB: "));
 
-  await Course.create({
+  let course1 = await Course.create({
     title: "Understanding clothes",
     lessons: [
       {
@@ -43,6 +45,8 @@ async function createDatabase() {
   });
 
   await mongoose.disconnect();
+
+  // console.log(course1)
 }
 
 createDatabase();
