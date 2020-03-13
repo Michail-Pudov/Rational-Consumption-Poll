@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionAddress = "mongodb://localhost:27017/ClimateUturnCourse";
+const connectionAddress = process.env.MONGO_URI;
 mongoose.connect(connectionAddress, {
   useNewUrlParser: true,
   useUnifiedTopology: true

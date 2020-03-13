@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+
 async function start() {
-  const connectionAddress = "mongodb://localhost:27017/ClimateUturnCourse";
+  const connectionAddress = process.env.MONGO_URI;
   await mongoose.connect(connectionAddress, {
     useNewUrlParser: true,
     useUnifiedTopology: true

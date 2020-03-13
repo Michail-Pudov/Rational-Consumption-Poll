@@ -2,7 +2,14 @@
 //Работа с сервером
 /**
  * Module dependencies.
+ *
+ *
  */
+require("dotenv").config();
+
+// console.log("MONGOURI", process.env.MONGO_URI);
+
+// process.exit(0);
 
 const app = require("../app");
 const debug = require("debug")("ajax-checkpoint-challenge:server");
