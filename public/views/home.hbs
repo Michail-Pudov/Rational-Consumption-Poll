@@ -1,11 +1,10 @@
-
-<centre> 
-<h1 class="course-heading display-4">Все лекции:</h1>  
+<centre>
+  <h1 class="course-heading display-4">Все лекции:</h1>
 </centre>
 
 {{#if isLoggedin}}
 <form action="/addCourse" method="GET">
-  <input type="submit" value="Create New Course">
+  <input type="submit" value="Создать новый курс">
 </form>
 
 
@@ -13,11 +12,11 @@
 <a href="/{{this.title}}/course">{{this.title}}</a>
 
 <form action="/delete/{{this.title}}" method="GET">
-  <input type="submit" value="Delete">
+  <input type="submit" value="Удалить">
 </form>
 
 <form action="/{{this.title}}/course" method="GET">
-  <input type="submit" value="Edit">
+  <input type="submit" value="Изменить">
 </form>
 {{!-- 
 <p>Average Score: {{averageScore}}</p>
@@ -35,5 +34,5 @@
 {{/each}}
 {{/if}}
 {{#if isLoggedin}}
-<a href="/exit">Exit</a>
+<a href="/exit">Выход из аккаунта</a>
 {{/if}}
