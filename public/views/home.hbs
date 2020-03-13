@@ -1,38 +1,55 @@
-<centre>
-  <h1 class="course-heading display-4">Все лекции:</h1>
-</centre>
-
+<br>
+<center>
+  <h1 class="course-heading display-4">Все лекции </h1>
+</center>
+<br>
 {{#if isLoggedin}}
 <form action="/addCourse" method="GET">
-  <input type="submit" value="Создать новый курс">
+  <input type="submit" value="Создать новый курс" class="btn  btn-block btn-outline-success">
 </form>
 
 
-{{#each courses}}
-<a href="/{{this.title}}/course">{{this.title}}</a>
-
-<form action="/delete/{{this.title}}" method="GET">
+{{!-- <form action="/delete/{{this.title}}" method="GET">
   <input type="submit" value="Удалить">
 </form>
+<br> --}}
 
-<form action="/{{this.title}}/course" method="GET">
-  <input type="submit" value="Изменить">
+{{#each courses}}
+<br>
+<center>
+  <a href="/{{this.title}}/course" style="color: #007F55;" class="h3  nav-link">{{this.title}} </a>
+</center>
+<br>
+<form action="/delete/{{this.title}}" method="GET">
+  <input type="submit" value="Удалить" class="btn  btn-block btn-outline-success">
 </form>
-{{!-- 
-<p>Average Score: {{averageScore}}</p>
-<p>Total reviews: {{totalReviews}}</p> --}}
-<p>Средняя статистика: {{totalReviews}}</p>
+<br>
+<form action="/{{this.title}}/course" method="GET">
+  <input type="submit" value="Изменить" class="btn  btn-block btn-outline-success">
+</form>
 
 <br>
+<center>
+  <h2 style="font-size: small;">Средняя статистика: {{totalReviews}}</h2>
+</center>
+<br>
+
+<hr style="border: 3px solid #007F55; width: 50%">
+
 {{/each}}
 
 {{else}}
 
 {{#each courses}}
-<a href="/{{this.title}}/course">{{this.title}}</a>
-<br>
+<center>
+  <a href="/{{this.title}}/course" style="color: #007F55;" class="h3  nav-link">{{this.title}} </a>
+</center>
+<hr style="border: 3px solid #007F55; width: 20%">
 {{/each}}
 {{/if}}
 {{#if isLoggedin}}
-<a href="/exit">Выход из аккаунта</a>
+<center>
+  <a href="/exit" class="h3 nav-link" style="color: #007F55;">Выход из аккаунта</a>
+</center>
+<br>
 {{/if}}

@@ -2,34 +2,25 @@
 <html lang="en">
 
 <head>
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/stylesheets/normalize.css">
-  {{!-- <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lobster+Two'> --}}
-  <link rel="stylesheet" href="/stylesheets/application.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-
-  <!-- JavaScripts -->
-  <script defer src="/lib/handlebars.min.js"></script>
-  <script defer src="/js/application.js"></script>
-  <title>ClimateChangeUturn</title>
+  <!-- Required meta tags -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/stylesheets/style.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <title>Climate Uturn lection</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#007F55;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#007F55; height: 100px">
     <a href="https://www.idea.am/ru/climat-uturn" class="navbar-brand h3 text-white "> <strong>Climate Uturn</strong>
     </a>
 
@@ -46,15 +37,29 @@
           <a href="/" class="text-white nav-link h3">Все лекции </a>
         </li>
         <li class="nav-item">
-          <a href="/login" class="h3 text-white nav-link"> Войти </a>
+          <a href="/login" class="h3 text-white nav-link "> Войти </a>
         </li>
       </ul>
     </div>
+
+    <img class='t338__logo t-img loaded' data-tu-max-width="800" data-tu-max-height='800' style='max-width:80px;'
+      src='https://thumb.tildacdn.com/tild3937-3961-4732-b461-306231303963/-/resize/80x/-/format/webp/uturnlogo-smallest.png'
+      data-original='https://static.tildacdn.com/tild3937-3961-4732-b461-306231303963/uturnlogo-smallest.png'
+      imgfield='img2' data-hook-clogo='coverlogo'>
   </nav>
 
+  <div class="container">
 
-  {{{body}}}
+    {{{body}}}
+  </div>
 
+  {{!-- <footer>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#007F55; height: 100px">
+      <center>
+        <a href="/" class="text-white nav-link h3">Все лекции </a>
+      </center>
+    </nav>
+  </footer> --}}
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -67,6 +72,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src='/js/application.js'></script>
 </body>
 
 </html>

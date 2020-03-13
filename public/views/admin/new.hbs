@@ -1,10 +1,15 @@
 <form action="/new/{{title}}" method="POST">
+  <br>
   <label for="URLInput">Добавьте ссылку на Youtube</label>
-  <input type="text" id="title" name="youtubeURL">
+  <input type="text" id="title" name="youtubeURL" class="form-control">
+  <br>
   <label for="URLInput">Добавьте ссылку на Google Form</label>
-  <input type="text" id="title" name="formURL">
-  <input type="submit" value="Create" class="btn  btn-block btn-outline-success" >
+  <br>
+  <input type="text" id="title" name="formURL" class="form-control">
+  <br>
+  <input type="submit" value="Создать" class="btn btn-success">
 </form>
+<br>
 <form action="/{{title}}/course" method="GET">
-  <input type="submit" value="Return to lecture">
+  <input type="submit" value="Вернуться к курсу" class="btn btn-success">
 </form>

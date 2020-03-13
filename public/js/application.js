@@ -1,8 +1,9 @@
 let slider = document.querySelector(".slidecontainer");
+console.log(slider);
 
 slider.addEventListener("submit", async function(event) {
   event.preventDefault();
-  console.log();
+  // console.log();
 
   let response = await fetch(event.target.action, {
     method: "POST",

@@ -1,30 +1,53 @@
-<h2 class="title">{{title}}</h2>
+<h1 class="title, display-1 text-center ">{{title}}</h1>
 
 
+<br>
 
 {{#if isLoggedin}}
 <form action="/save/{{title}}" method="POST">
   {{#each course}}
   {{#if this.youtubeURL}}
   <div class="youtube">
-    <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
+
+    <center>
+
+
+      <iframe class="text-center" width="100%" height="500" src={{this.youtubeURL}} frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+
   </div>
   {{/if}}
-  <br />
-  <input type="text" value="{{this.youtubeURL}}" placeholder="youtubeURL" name="youtubeURL">
+  <center>
+    <br />
+    <input type="text" style="width: 600px" value="{{this.youtubeURL}}" placeholder="youtubeURL" name="youtubeURL">
+    <br>
+  </center>
   {{#if this.formURL}}
+  <br>
   <div class="googleDoc">
-    <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
+
+
+    <center>
+
+      <iframe src={{this.formURL}} width="1100" height="500" frameborder="0" marginheight="0"
+        marginwidth="0">Загрузка…</iframe>
+    </center>
+
+
   </div>
   {{/if}}
-  <br />
-  <input type="text" value="{{this.formURL}}" placeholder="formURL" name="formURL">
-  <br />
-  <br />
+  <center>
+    <br />
+    <input type="text" style="width: 600px" value="{{this.formURL}}" placeholder="formURL" name="formURL">
+    <br />
+    <br />
+  </center>
   {{/each}}
-  <input type="submit" value="Сохранить изменения" class="btn  btn-block btn-outline-success">
-
-
+  <center>
+    <input type="submit" value="Сохранить изменения" class="btn btn-success">
+  </center>
+  <br>
 </form>
 
 {{else}}
@@ -32,31 +55,55 @@
 {{#each course}}
 {{#if this.youtubeURL}}
 <div class="youtube">
-  <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
+  <center>
+
+
+    <iframe src={{this.youtubeURL}} width="100%" height="500" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </center>
 </div>
 {{/if}}
+<br>
 {{#if this.formURL}}
 <div class="googleDoc">
-  <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
+  <center>
+    <iframe src={{this.formURL}} width="100%" height="500" frameborder="0" marginheight="0"
+      marginwidth="0">Загрузка…</iframe>
+  </center>
 </div>
 {{/if}}
+<br>
 {{/each}}
 {{/if}}
 
 
 
-
-<div class="slidecontainer">
-  <form action="/review/{{title}}" method="POST">
-    <p>Вам понравился курс?</p>
-    <input type="range" min="1" max="100" value="50" ,class="slider" name="range">
-    <input type="submit" value="Оставить отзыв" class="btn  btn-block btn-outline-success">
-  </form>
-</div>
-
+<center>
+  <div class="slidecontainer">
+    <form action="/review/{{title}}" method="POST">
+      <h1 class="text-center">Вам понравился курс?</h1>
+      <input type="range" min="1" max="100" value="50" ,class="slider" name="range">
+      <br>
+      <br>
+      <input type="submit" value="Оставить отзыв" class="btn btn-success">
+    </form>
+  </div>
+</center>
+<br>
+<br>
+<br>
 {{#if isLoggedin}}
 <br />
-<form action="/new/{{title}}" method="GET">
-  <input type="submit" value="Создать новую запись" class="btn  btn-block btn-outline-success">
-</form>
-{{/if}}
+<center>
+  <form action="/new/{{title}}" method="GET">
+    <input type="submit" value="Создать новую запись" class="btn btn-success">
+  </form>
+  {{/if}}
+</center>
+<br>
+
+<center>
+  <a href="/" style="color: #007F55; font-size: small" class="nav-link h3">Все лекции </a>
+</center>
+<br>
+<br>
