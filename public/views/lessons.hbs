@@ -1,20 +1,41 @@
-<h2 class="title">{{title}}</h2>
 
 
+<h1 class="title, display-1 text-center ">{{title}}</h1> 
+
+
+<br>
 
 {{#if isLoggedin}}
 <form action="/save/{{title}}" method="POST">
   {{#each course}}
   {{#if this.youtubeURL}}
   <div class="youtube">
-    <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
+
+<center>
+
+
+<iframe class="text-center" width="100%" height="500" src={{this.youtubeURL}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+    {{!-- <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe> --}}
   </div>
   {{/if}}
   <br />
-  <input type="text" value="{{this.youtubeURL}}" placeholder="youtubeURL" name="youtubeURL">
+  <input  type="text" value="{{this.youtubeURL}}" placeholder="youtubeURL" name="youtubeURL">
   {{#if this.formURL}}
   <div class="googleDoc">
-    <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
+
+
+<center>
+
+  <iframe src = {{this.formURL}} width="1198" height="1500" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+</center>
+
+    
+    
+    {{!-- <iframe src={{this.formURL}} frameborder="0">Тест...</iframe> --}}
+  
+  
   </div>
   {{/if}}
   <br />
@@ -22,8 +43,10 @@
   <br />
   <br />
   {{/each}}
-  <input type="submit" value="Save Changes">
-
+  <center> 
+  <input type="submit" value="Save Changes" class="btn btn-success">
+</center>
+<br>
 </form>
 
 {{else}}
@@ -31,12 +54,21 @@
 {{#each course}}
 {{#if this.youtubeURL}}
 <div class="youtube">
-  <iframe src={{this.youtubeURL}} frameborder="0">Тест...</iframe>
+  <center>
+
+ 
+ <iframe  src={{this.youtubeURL}} width="100%" height="500"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </center>
 </div>
 {{/if}}
 {{#if this.formURL}}
 <div class="googleDoc">
-  <iframe src={{this.formURL}} frameborder="0">Тест...</iframe>
+<center>
+
+
+
+   <iframe  src= {{this.formURL}}  width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+</center>
 </div>
 {{/if}}
 {{/each}}
@@ -44,15 +76,19 @@
 
 
 
-
+<center> 
 <div class="slidecontainer">
   <form action="/review/{{title}}" method="POST">
-    <p>Вам понравился курс?</p>
+    <h1 class="text-center">Вам понравился курс?</h1>
     <input type="range" min="1" max="100" value="50" ,class="slider" name="range">
-    <input type="submit" value="Оставить отзыв">
+    <br>
+    <input type="submit" value="Оставить отзыв" class="btn btn-success">
   </form>
 </div>
-
+</center>
+<br>
+<br>
+<br>
 {{!-- <div class="d-flex justify-content-center my-4 pt-3">
   <span class="font-weight-bold blue-text mr-2 mt-1"><i class="fas fa-thumbs-down" aria-hidden="true"></i></span>
   <form class="range-field w-75">
@@ -63,7 +99,12 @@
 
 {{#if isLoggedin}}
 <br />
+<center> 
 <form action="/new/{{title}}" method="GET">
-  <input type="submit" value="Create New Entry">
+  <input type="submit" value="Create New Entry " class="btn btn-success"  >
 </form>
 {{/if}}
+</center>
+<br>
+<br>
+<br>

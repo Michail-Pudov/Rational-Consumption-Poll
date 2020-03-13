@@ -1,35 +1,52 @@
-<h1 class="course-heading">Our courses</h1>
+<center>
+  <br>
+<h1 class="course-heading display-4">Все лекции: </h1>
+</center>
+
 {{#if isLoggedin}}
 <form action="/addCourse" method="GET">
-  <input type="submit" value="Create New Course">
-</form>
+  <input type="submit" value="Create New Course" class="btn  btn-block btn-outline-success">
 
+
+
+</form>
+<br>
 
 {{#each courses}}
-<a href="/{{this.title}}/course">{{this.title}}</a>
-
+<center> 
+<a href="/{{this.title}}/course" class="h3  nav-link" >{{this.title}} </a>
+</center>
 <form action="/delete/{{this.title}}" method="GET">
-  <input type="submit" value="Delete">
+  <input type="submit" value="Delete" class="btn  btn-block btn-outline-success">
 </form>
-
+<br>
 <form action="/{{this.title}}/course" method="GET">
-  <input type="submit" value="Edit">
+  <input type="submit" value="Edit" class="btn  btn-block btn-outline-success">
 </form>
 {{!-- 
 <p>Average Score: {{averageScore}}</p>
 <p>Total reviews: {{totalReviews}}</p> --}}
-<p>Средняя статистика: {{totalReviews}}</p>
-
 <br>
+<center> 
+<h2>Средняя статистика: {{totalReviews}}</h2>
+</center>
+<br>
+
+<hr style="border: 10px solid #007F55;">
+
 {{/each}}
 
 {{else}}
 
 {{#each courses}}
-<a href="/{{this.title}}/course">{{this.title}}</a>
+<center> 
+<a href="/{{this.title}}/course" class="h3  nav-link" >{{this.title}}  </a>
+</center>
 <br>
 {{/each}}
 {{/if}}
 {{#if isLoggedin}}
-<a href="/exit">Exit</a>
+<center> 
+<a href="/exit" class="h3 nav-link" >Exit</a>
+</center>
 {{/if}}
