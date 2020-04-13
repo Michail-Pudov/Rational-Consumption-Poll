@@ -33,7 +33,7 @@ npm start
 * Course Editing
 * Deleting Courses
 
-# Teams
+# Team
 [Tigran](https://github.com/Tigran134)
 
 [Immy](https://github.com/negomi-e)
