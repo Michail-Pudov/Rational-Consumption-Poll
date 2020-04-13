@@ -9,8 +9,7 @@ Service for creating courses to increase consumer literacy.
 * Mongoose
 
 # Installing
-after clone create .env file in the folder backend with
-
+after the clone, create the .env file in the root folder
 `
 MONGO_URI=**your mongodb URI with username and password**
 `
