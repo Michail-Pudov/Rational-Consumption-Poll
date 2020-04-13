@@ -16,6 +16,7 @@ MONGO_URI=**your mongodb URI with username and password**
 `
 
 then write
+
 `
  npm install
  `
