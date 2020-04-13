@@ -34,11 +34,11 @@ npm start
 * Deleting Courses
 
 # Team
-[Tigran](https://github.com/Tigran134)
+* [Tigran](https://github.com/Tigran134)
 
-[Immy](https://github.com/negomi-e)
+* [Immy](https://github.com/negomi-e)
 
-[Michail](https://github.com/Michail-Pudov)
+* [Michail](https://github.com/Michail-Pudov)
 
 
 # In the plans
