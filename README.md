@@ -10,9 +10,11 @@ Service for creating courses to increase consumer literacy.
 
 # Installing
 after clone create .env file in the folder backend with
+
 `
 MONGO_URI=**your mongodb URI with username and password**
 `
+
 then write
 `
  npm install
