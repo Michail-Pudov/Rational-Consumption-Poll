@@ -10,7 +10,7 @@ Service for creating courses to increase consumer literacy.
 
 # Installing
 * after clone create .env file in the folder backend with
-MONGO_URI=***your mongodb URI with username and password***
+MONGO_URI=**your mongodb URI with username and password**
 then write
 * npm install
 
@@ -26,8 +26,14 @@ npm start
 
 # Teams
 [Tigran](https://github.com/Tigran134)
+====
+
 [Immy](https://github.com/negomi-e)
+====
+
 [Michail](https://github.com/Michail-Pudov)
+====
+
 
 # In the plans
 Create new extensions
