@@ -9,13 +9,19 @@ Service for creating courses to increase consumer literacy.
 * Mongoose
 
 # Installing
-* after clone create .env file in the folder backend with
+after clone create .env file in the folder backend with
+`
 MONGO_URI=**your mongodb URI with username and password**
+`
 then write
-* npm install
+`
+ npm install
+ `
 
 # Running
+`
 npm start
+`
 
 # MVP Functionality
 * Authorization for administrators
@@ -26,13 +32,10 @@ npm start
 
 # Teams
 [Tigran](https://github.com/Tigran134)
-====
 
 [Immy](https://github.com/negomi-e)
-====
 
 [Michail](https://github.com/Michail-Pudov)
-====
 
 
 # In the plans
